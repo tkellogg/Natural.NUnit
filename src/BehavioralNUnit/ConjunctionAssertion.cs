@@ -6,7 +6,7 @@ namespace BehavioralNUnit
 {
 	public class ConjunctionAssertion : BaseSpecification
 	{
-		private List<CombineType> combineTypes = new List<CombineType>();
+		private readonly List<CombineType> combineTypes = new List<CombineType>();
 
 		public enum CombineType
 		{
@@ -45,12 +45,12 @@ namespace BehavioralNUnit
 			return ret;
 		}
 
-		private IEnumerable<Exception> And(IEnumerable<Exception> a, IEnumerable<Exception> b)
+		private static IEnumerable<Exception> And(IEnumerable<Exception> a, IEnumerable<Exception> b)
 		{
 			return a.Union(b);
 		}
 
-		private IEnumerable<Exception> Or(IEnumerable<Exception> a, IEnumerable<Exception> b)
+		private static IEnumerable<Exception> Or(IEnumerable<Exception> a, IEnumerable<Exception> b)
 		{
 			if (!a.Any())
 				return a;
