@@ -12,25 +12,25 @@ namespace BehavioralNUnit
 
 		public static ConjunctionAssertion operator <(ShouldBeComparableAssertion<T> self, T other)
 		{
-			Assert.Less(self.Reference, other);
+			self.AddAssertion(() => Assert.Less(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 
 		public static ConjunctionAssertion operator >(ShouldBeComparableAssertion<T> self, T other)
 		{
-			Assert.Greater(self.Reference, other);
+			self.AddAssertion(() => Assert.Greater(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 
 		public static ConjunctionAssertion operator <=(ShouldBeComparableAssertion<T> self, T other)
 		{
-			Assert.LessOrEqual(self.Reference, other);
+			self.AddAssertion(() => Assert.LessOrEqual(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 
 		public static ConjunctionAssertion operator >=(ShouldBeComparableAssertion<T> self, T other)
 		{
-			Assert.GreaterOrEqual(self.Reference, other);
+			self.AddAssertion(() => Assert.GreaterOrEqual(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 	}

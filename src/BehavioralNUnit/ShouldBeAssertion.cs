@@ -28,13 +28,13 @@ namespace BehavioralNUnit
 
 		public ConjunctionAssertion NotBe()
 		{
-			Assert.Null(Reference);
+			AddAssertion(() => Assert.Null(Reference));
 			return new ConjunctionAssertion(this);
 		}
 
 		public ConjunctionAssertion Be()
 		{
-			Assert.NotNull(Reference);
+			AddAssertion(() => Assert.NotNull(Reference));
 			return new ConjunctionAssertion(this);
 		}
 	}

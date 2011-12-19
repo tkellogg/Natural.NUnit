@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="when_type_is_comparable.cs" />
     <Compile Include="when_asserting_about_equality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_asserting_about_existence.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
