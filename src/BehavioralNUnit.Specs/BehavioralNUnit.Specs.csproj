@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Specifier.cs" />
     <Compile Include="when_asserting_about_equality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
