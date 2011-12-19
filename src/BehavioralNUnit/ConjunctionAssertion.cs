@@ -4,7 +4,7 @@
 	{
 		public ConjunctionAssertion(BaseSpecification assertion)
 		{
-			Specifications.Add(assertion);
+			AddSpec(assertion);
 		}
 
 		public static bool operator &(ConjunctionAssertion self, ConjunctionAssertion other)

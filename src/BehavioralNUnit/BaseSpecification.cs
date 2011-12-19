@@ -1,20 +1,59 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace BehavioralNUnit
 {
 	public abstract class BaseSpecification
 	{
-		protected readonly List<BaseSpecification> Specifications;
+		private readonly List<BaseSpecification> specifications;
+		private readonly List<Exception> errors;
 
 		protected BaseSpecification()
 		{
-			Specifications = new List<BaseSpecification>();
+			specifications = new List<BaseSpecification>();
+			errors = new List<Exception>();
+		}
+
+		protected virtual IEnumerable<BaseSpecification> Specifications
+		{
+			get { return specifications; }
+		}
+
+		protected virtual IEnumerable<Exception> Errors
+		{
+			get { return errors; }
+		}
+
+		protected void AddSpec(BaseSpecification spec)
+		{
+			specifications.Add(spec);
+			errors.Add(null);
+		}
+
+		protected Exception AddAssertion(Action assertion)
+		{
+			Exception ret = null;
+			try
+			{
+				assertion();
+			}
+			catch (Exception e)
+			{
+				ret = e;
+				errors.Add(ret);
+			}
+			return ret;
 		}
 
 		public virtual void Evaluate()
 		{
-			
+			foreach (var exception in Errors)
+				if (exception != null)
+					throw exception;
+
+			foreach (var specification in Specifications)
+				specification.Evaluate();
 		}
 	}
 }

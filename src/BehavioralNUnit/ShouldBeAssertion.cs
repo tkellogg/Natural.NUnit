@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace BehavioralNUnit
 {
@@ -13,14 +14,15 @@ namespace BehavioralNUnit
 
 		public static ConjunctionAssertion operator ==(ShouldBeAssertion<T> self, T other)
 		{
-			Assert.NotNull(self);
-			Assert.AreEqual(self.Reference, other);
+			if (self == null) throw new InvalidOperationException("Assertion wrapper was null");
+			self.AddAssertion(() => Assert.AreEqual(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 
 		public static ConjunctionAssertion operator !=(ShouldBeAssertion<T> self, T other)
 		{
-			Assert.AreNotEqual(self.Reference, other);
+			if (self == null) throw new InvalidOperationException("Assertion wrapper was null");
+			self.AddAssertion(() => Assert.AreNotEqual(self.Reference, other));
 			return new ConjunctionAssertion(self);
 		}
 
