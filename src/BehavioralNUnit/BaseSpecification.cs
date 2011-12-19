@@ -46,7 +46,7 @@ namespace BehavioralNUnit
 			return ret;
 		}
 
-		protected IEnumerable<Exception> GetErrors()
+		protected internal virtual IEnumerable<Exception> GetErrors()
 		{
 			var ret = new List<Exception>();
 			foreach (var exception in Errors)
