@@ -46,14 +46,24 @@ namespace BehavioralNUnit
 			return ret;
 		}
 
-		public virtual void Evaluate()
+		protected IEnumerable<Exception> GetErrors()
 		{
+			var ret = new List<Exception>();
 			foreach (var exception in Errors)
 				if (exception != null)
-					throw exception;
+					ret.Add(exception);
 
 			foreach (var specification in Specifications)
-				specification.Evaluate();
+				ret.AddRange(specification.GetErrors());
+
+			return ret;
+		}
+
+		public virtual void Evaluate()
+		{
+			var first = GetErrors().FirstOrDefault();
+			if (first != null)
+				throw first;
 		}
 	}
 }
