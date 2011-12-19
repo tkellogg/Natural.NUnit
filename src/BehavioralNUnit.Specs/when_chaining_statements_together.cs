@@ -114,5 +114,19 @@ namespace BehavioralNUnit.Specs
 			b.VerifyAll();
 			Assert.Throws<AssertionException>(expression.Evaluate);
 		}
+
+		[Test]
+		public void it_passes_when_using_parentheses()
+		{
+			var expression = (2.ShouldBe() > 3 || 7.ShouldBe() > 6) && 1.Should() == 1;
+			expression.Evaluate();
+		}
+
+		[Test]
+		public void it_passes_when_not_using_parentheses()
+		{
+			var expression = 2.ShouldBe() > 3 || 7.ShouldBe() > 6 && 1.Should() == 1;
+			expression.Evaluate();
+		}
 	}
 }
