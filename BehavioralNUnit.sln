@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioralNUnit", "BehavioralNUnit\BehavioralNUnit.csproj", "{8508706B-BD3C-406B-A3CA-D2669254B4CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioralNUnit.Specs", "BehavioralNUnit.Specs\BehavioralNUnit.Specs.csproj", "{D34797F9-D279-462A-BFB8-AE9C6947095D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8508706B-BD3C-406B-A3CA-D2669254B4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8508706B-BD3C-406B-A3CA-D2669254B4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8508706B-BD3C-406B-A3CA-D2669254B4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8508706B-BD3C-406B-A3CA-D2669254B4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34797F9-D279-462A-BFB8-AE9C6947095D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34797F9-D279-462A-BFB8-AE9C6947095D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34797F9-D279-462A-BFB8-AE9C6947095D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34797F9-D279-462A-BFB8-AE9C6947095D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
