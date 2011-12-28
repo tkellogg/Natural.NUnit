@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioralNUnit", "Behavior
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehavioralNUnit.Specs", "BehavioralNUnit.Specs\BehavioralNUnit.Specs.csproj", "{D34797F9-D279-462A-BFB8-AE9C6947095D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Top Level Items", "Top Level Items", "{9446E670-B1A4-4CB0-A002-BB7A626D3CFC}"
+	ProjectSection(SolutionItems) = preProject
+		..\Readme.md = ..\Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

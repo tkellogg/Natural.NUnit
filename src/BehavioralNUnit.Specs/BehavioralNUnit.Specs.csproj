@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="when_chaining_statements_together.cs" />
+    <Compile Include="when_doing_basic_collection_assert.cs" />
     <Compile Include="when_type_is_comparable.cs" />
     <Compile Include="when_asserting_about_equality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
