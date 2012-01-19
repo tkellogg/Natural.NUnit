@@ -22,20 +22,20 @@ Quick Start
 Use operator overloads for better assertions
 
 ```csharp
-var spec = new Spec();
 var result = CalculateRating();
-spec.It["uses operator overloads instead of awkward fluent methods"] = 
-    result.Should() == 5;
 
-spec.It["uses boolean operators to combine assertions"] =
-    result.Should() > 3 && result.Should() < 6;
+// uses operator overloads instead of awkward fluent methods
+Assert.That(result.Should() == 5);
 
-spec.It["allows you to use parentheses for clarity"] =
-    result.Should() > 3 && (result.Should() < 6 || result.Should() > 60);
+// it uses boolean operators to combine assertions
+Assert.That(result.Should() > 3 && result.Should() < 6);
+
+// it allows you to use parentheses for clarity
+Assert.That(result.Should() > 3 && (result.Should() < 6 || result.Should() > 60));
 
 // Not yet implemented
-spec.It["allows you to use clearer, more mathematical range specs"] = 
-		3 < result.Should() < 6;
+// it allows you to use clearer, more mathematical range specs
+Assert.That(3 < result.Should() < 6);
 ```
 
 Collection and string spec API's are still undesigned & unimplemented. No
