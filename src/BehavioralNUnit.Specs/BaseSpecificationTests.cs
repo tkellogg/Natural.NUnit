@@ -33,6 +33,13 @@ namespace BehavioralNUnit.Specs
                 bool convertedValue = mocked.Object;
                 Assert.That(convertedValue);
             }
+
+            [Test]
+            public void Examples()
+            {
+                Assert.That(42.Should() == 42);
+                Assert.Throws<AssertionException>(() => Assert.That(42.Should() != 42));
+            }
         }
     }
 }
