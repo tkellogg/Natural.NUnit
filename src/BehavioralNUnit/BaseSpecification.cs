@@ -65,5 +65,12 @@ namespace BehavioralNUnit
 			if (first != null)
 				throw first;
 		}
+
+		public static implicit operator bool(BaseSpecification self)
+		{
+			self.Evaluate();
+			return true;
+		}
+
 	}
 }
