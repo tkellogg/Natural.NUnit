@@ -41,6 +41,24 @@ namespace BehavioralNUnit.Specs
                 var expression = assertion == new[] { 43 };
                 Assert.Throws<AssertionException>(() => expression.Evaluate());
             }
+        }        
+
+        public class NotEqualsMethodTests
+        {
+            [Test]
+            public void it_asserts_non_equivalence()
+            {
+                var assertion = new CollectionAssertion<int[]>(new[] { 42 });
+                (assertion != new[] { 43 }).Evaluate();
+            }
+
+            [Test]
+            public void it_fails_on_equivalence()
+            {
+                var assertion = new CollectionAssertion<int[]>(new[] { 42 });
+                var expression = assertion != new[] { 42 };
+                Assert.Throws<AssertionException>(() => expression.Evaluate());
+            }
         }
     }
 }
