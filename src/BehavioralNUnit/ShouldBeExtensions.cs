@@ -19,12 +19,5 @@ namespace BehavioralNUnit
 			return new ShouldBeAssertion<T>(self);
 		}
 
-		/// <summary>
-		/// Collection Assertions
-		/// </summary>
-		public static CollectionAssertions<IEnumerable<T>, T> ShouldHave<T> (this IEnumerable<T> self)
-		{
-			return new CollectionAssertions<IEnumerable<T>, T>(self);
-		}
 	}
 }
