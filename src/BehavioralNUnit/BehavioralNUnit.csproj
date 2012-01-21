@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSpecification.cs" />
+    <Compile Include="CollectionAssertion.cs" />
     <Compile Include="ConjunctionAssertion.cs" />
     <Compile Include="ShouldBeAssertion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,15 +15,25 @@ namespace BehavioralNUnit
 		public static ConjunctionAssertion operator ==(ShouldBeAssertion<T> self, T other)
 		{
 			if (self == null) throw new InvalidOperationException("Assertion wrapper was null");
-			self.AddAssertion(() => Assert.AreEqual(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return self.EqualsOperator(other);
+		}
+
+		protected virtual ConjunctionAssertion EqualsOperator(T other)
+		{
+			AddAssertion(() => Assert.AreEqual(Reference, other));
+			return new ConjunctionAssertion(this);
 		}
 
 		public static ConjunctionAssertion operator !=(ShouldBeAssertion<T> self, T other)
 		{
 			if (self == null) throw new InvalidOperationException("Assertion wrapper was null");
-			self.AddAssertion(() => Assert.AreNotEqual(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return self.NotEqualsOperator(other);
+		}
+
+		protected virtual ConjunctionAssertion NotEqualsOperator(T other)
+		{
+			AddAssertion(() => Assert.AreNotEqual(Reference, other));
+			return new ConjunctionAssertion(this);
 		}
 
 		public ConjunctionAssertion NotBe()
