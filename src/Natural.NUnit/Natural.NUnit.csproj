@@ -52,6 +52,7 @@
     <Compile Include="Framework\BaseSpecification.cs" />
     <Compile Include="Framework\CollectionAssertion.cs" />
     <Compile Include="Framework\ConjunctionAssertion.cs" />
+    <Compile Include="Framework\RangeConjunctionAssertion.cs" />
     <Compile Include="Framework\ShouldBeAssertion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\ShouldBeComparableAssertion.cs" />
