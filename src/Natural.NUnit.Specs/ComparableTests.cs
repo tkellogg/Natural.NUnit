@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace BehavioralNUnit.Specs
+namespace Natural.NUnit.Specs
 {
 	[TestFixture]
 	class ComparableTests

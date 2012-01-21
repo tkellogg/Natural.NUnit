@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace BehavioralNUnit
+namespace Natural.NUnit.Framework
 {
 	public class ShouldBeComparableAssertion<T> : ShouldBeAssertion<T>
 		where T : IComparable

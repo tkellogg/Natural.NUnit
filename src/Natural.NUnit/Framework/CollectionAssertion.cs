@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using System.Collections;
 
-namespace BehavioralNUnit
+namespace Natural.NUnit.Framework
 {
     public class CollectionAssertion<T> : ShouldBeAssertion<T>
     {

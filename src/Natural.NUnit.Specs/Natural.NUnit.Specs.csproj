@@ -8,8 +8,8 @@
     <ProjectGuid>{D34797F9-D279-462A-BFB8-AE9C6947095D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BehavioralNUnit.Specs</RootNamespace>
-    <AssemblyName>BehavioralNUnit.Specs</AssemblyName>
+    <RootNamespace>Natural.NUnit.Specs</RootNamespace>
+    <AssemblyName>Natural.NUnit.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -64,7 +64,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BehavioralNUnit\BehavioralNUnit.csproj">
+    <ProjectReference Include="..\Natural.NUnit\Natural.NUnit.csproj">
       <Project>{8508706B-BD3C-406B-A3CA-D2669254B4CF}</Project>
       <Name>BehavioralNUnit</Name>
     </ProjectReference>

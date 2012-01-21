@@ -8,8 +8,8 @@
     <ProjectGuid>{8508706B-BD3C-406B-A3CA-D2669254B4CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BehavioralNUnit</RootNamespace>
-    <AssemblyName>BehavioralNUnit</AssemblyName>
+    <RootNamespace>Natural.NUnit</RootNamespace>
+    <AssemblyName>Natural.NUnit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,12 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseSpecification.cs" />
-    <Compile Include="CollectionAssertion.cs" />
-    <Compile Include="ConjunctionAssertion.cs" />
-    <Compile Include="ShouldBeAssertion.cs" />
+    <Compile Include="Framework\BaseSpecification.cs" />
+    <Compile Include="Framework\CollectionAssertion.cs" />
+    <Compile Include="Framework\ConjunctionAssertion.cs" />
+    <Compile Include="Framework\ShouldBeAssertion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShouldBeComparableAssertion.cs" />
+    <Compile Include="Framework\ShouldBeComparableAssertion.cs" />
     <Compile Include="ShouldBeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

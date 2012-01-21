@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace BehavioralNUnit.Specs
+namespace Natural.NUnit.Specs
 {
 	[TestFixture]
 	public class EqualityAndInEqualityTests

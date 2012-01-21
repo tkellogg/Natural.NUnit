@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using Natural.NUnit.Framework;
 
-namespace BehavioralNUnit
+namespace Natural.NUnit
 {
 	public static class ShouldBeExtensions
 	{

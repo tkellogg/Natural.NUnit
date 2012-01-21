@@ -2,7 +2,7 @@
 using System.Linq;
 using NUnit.Framework;
 using System;
-namespace BehavioralNUnit
+namespace Natural.NUnit.Framework
 {
 	public class ConjunctionAssertion : BaseSpecification
 	{

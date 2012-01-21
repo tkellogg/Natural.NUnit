@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using Natural.NUnit.Framework;
 
-namespace BehavioralNUnit.Specs
+namespace Natural.NUnit.Specs
 {
     class CollectionAssertionTests
     {

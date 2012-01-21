@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace BehavioralNUnit
+namespace Natural.NUnit.Framework
 {
 	public abstract class BaseSpecification
 	{
