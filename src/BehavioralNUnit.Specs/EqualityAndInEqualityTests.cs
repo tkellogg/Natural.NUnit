@@ -3,7 +3,7 @@
 namespace BehavioralNUnit.Specs
 {
 	[TestFixture]
-	public class when_asserting_about_equality
+	public class EqualityAndInEqualityTests
 	{
 		[Test]
 		public void it_can_fail_an_assertion_about_equality()

@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace BehavioralNUnit.Specs
 {
 	[TestFixture]
-	public class when_chaining_statements_together
+	public class ChainedStatementsTests
 	{
 		public class Mockable
 		{

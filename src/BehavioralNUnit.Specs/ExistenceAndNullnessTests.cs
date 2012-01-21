@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace BehavioralNUnit.Specs
 {
 	[TestFixture]
-	class when_asserting_about_existence
+	class ExistenceAndNullnessTests
 	{
 		[Test]
 		public void null_is_definitely_null()

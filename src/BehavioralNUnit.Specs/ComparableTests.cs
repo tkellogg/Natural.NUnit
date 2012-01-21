@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace BehavioralNUnit.Specs
 {
 	[TestFixture]
-	class when_type_is_comparable
+	class ComparableTests
 	{
 		[Test]
 		public void it_compares_less_than_correctly()
