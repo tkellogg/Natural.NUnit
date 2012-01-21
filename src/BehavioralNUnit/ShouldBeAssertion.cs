@@ -47,5 +47,19 @@ namespace BehavioralNUnit
 			AddAssertion(() => Assert.NotNull(Reference));
 			return new ConjunctionAssertion(this);
 		}
+
+		#region Overrides from object
+		public override bool Equals(object obj)
+		{
+			if (obj is T)
+				return EqualsOperator((T)obj);
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+		#endregion
 	}
 }

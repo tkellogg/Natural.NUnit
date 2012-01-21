@@ -48,6 +48,8 @@ namespace BehavioralNUnit.Specs
             [Test]
             public void it_asserts_non_equivalence()
             {
+                // TODO: dream up a better way to test non-equivalance. 
+                // These two tests actually pass if you delete the method under test.
                 var assertion = new CollectionAssertion<int[]>(new[] { 42 });
                 (assertion != new[] { 43 }).Evaluate();
             }
