@@ -38,6 +38,16 @@ namespace Natural.NUnit.Framework
 			return DoAssertionForParameters(actual, expected, Assert.Greater);
 		}
 
+		public static ConjunctionAssertion operator <=(RangeConjunctionAssertion<T> actual, T expected)
+		{
+			return DoAssertionForParameters(actual, expected, Assert.LessOrEqual);
+		}
+
+		public static ConjunctionAssertion operator >=(RangeConjunctionAssertion<T> actual, T expected)
+		{
+			return DoAssertionForParameters(actual, expected, Assert.GreaterOrEqual);
+		}
+
 		private static ConjunctionAssertion DoAssertionForParameters(RangeConjunctionAssertion<T> actual, T expected,
 			Action<IComparable, IComparable> assertionFunction)
 		{

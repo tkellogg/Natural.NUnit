@@ -126,6 +126,32 @@ namespace Natural.NUnit.Specs
 			}
 
 			[Test]
+			public void It_can_assert_itself_within_a_range_of_LessThanOrEqual_operators()
+			{
+				(1 < 3.ShouldBe() <= 5).Evaluate();
+				(1 < 3.ShouldBe() <= 3).Evaluate();
+			}
+
+			[Test]
+			public void It_can_fail_an_assertion_on_the_2nd_LessThanOrEqual_operator()
+			{
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() <= 1).Evaluate);
+			}
+
+			[Test]
+			public void It_can_assert_itself_within_a_range_of_GreaterThanOrEqual_operators()
+			{
+				(5 > 3.ShouldBe() >= 1).Evaluate();
+				(5 > 3.ShouldBe() >= 3).Evaluate();
+			}
+
+			[Test]
+			public void It_can_fail_an_assertion_on_the_2nd_GreaterThanOrEqual_operator()
+			{
+				Assert.Throws<AssertionException>((5 > 3.ShouldBe() >= 5).Evaluate);
+			}
+
+			[Test]
 			public void It_can_pass_a_range_comparison_when_the_first_element_is_the_ShouldBe()
 			{
 				//(1.ShouldBe() < 3 < 5).Evaluate();
