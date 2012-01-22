@@ -36,10 +36,13 @@ namespace Natural.NUnit.Framework
 			return new ConjunctionAssertion(this);
 		}
 
-		public ConjunctionAssertion NotBe()
+		public ConjunctionAssertion NotBeNull
 		{
-			AddAssertion(() => Assert.Null(Reference));
-			return new ConjunctionAssertion(this);
+			get
+			{
+				AddAssertion(() => Assert.Null(Reference));
+				return new ConjunctionAssertion(this);
+			}
 		}
 
 		public ConjunctionAssertion BeNull

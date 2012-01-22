@@ -13,7 +13,7 @@ namespace Natural.NUnit.Specs
 		public void null_is_definitely_null()
 		{
 			object nil = null;
-			(nil.Should().NotBe()).Evaluate();
+			(nil.Should().NotBeNull).Evaluate();
 		}
 
 		[Test]
@@ -33,7 +33,7 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void NotBe_method_evaluates_only_when_Evaluate_is_invoked()
 		{
-			var eval = 42.Should().NotBe();
+			var eval = 42.Should().NotBeNull;
 			Assert.Throws<AssertionException>(eval.Evaluate);
 		}
 	}
