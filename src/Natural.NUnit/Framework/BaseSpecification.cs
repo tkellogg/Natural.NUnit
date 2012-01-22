@@ -27,6 +27,8 @@ namespace Natural.NUnit.Framework
 
 		protected void AddSpec(BaseSpecification spec)
 		{
+			if (spec == null)
+				throw new ArgumentException("Specification cannot be null. It's required for making assertions later on");
 			specifications.Add(spec);
 		}
 

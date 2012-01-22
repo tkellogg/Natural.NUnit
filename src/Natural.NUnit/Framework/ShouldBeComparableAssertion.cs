@@ -38,13 +38,13 @@ namespace Natural.NUnit.Framework
 		public static RangeConjunctionAssertion<T> operator <(T other, ShouldBeComparableAssertion<T> self)
 		{
 			self.AddAssertion(() => Assert.Less(other, self.Reference));
-			return new RangeConjunctionAssertion<T>(self);
+			return new RangeConjunctionAssertion<T>(self, self.Reference);
 		}
 
 		public static RangeConjunctionAssertion<T> operator >(T other, ShouldBeComparableAssertion<T> self)
 		{
 			self.AddAssertion(() => Assert.Greater(other, self.Reference));
-			return new RangeConjunctionAssertion<T>(self);
+			return new RangeConjunctionAssertion<T>(self, self.Reference);
 		}
 
 		public static ConjunctionAssertion operator <=(T other, ShouldBeComparableAssertion<T> self)

@@ -106,6 +106,18 @@ namespace Natural.NUnit.Specs
 			{
 				(1 < 3.ShouldBe() < 5).Evaluate();
 			}
+
+			[Test]
+			public void It_can_fail_an_assertion_on_the_2nd_operator()
+			{
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 1).Evaluate);
+			}
+
+			[Test]
+			public void It_can_pass_a_range_comparison_when_the_first_element_is_the_ShouldBe()
+			{
+				//(1.ShouldBe() < 3 < 5).Evaluate();
+			}
 		}
 	}
 }
