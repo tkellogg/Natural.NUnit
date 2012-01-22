@@ -40,7 +40,7 @@ namespace Natural.NUnit.Framework
 		{
 			get
 			{
-				AddAssertion(() => Assert.Null(Reference));
+				AddAssertion(() => Assert.NotNull(Reference));
 				return new ConjunctionAssertion(this);
 			}
 		}
@@ -49,7 +49,7 @@ namespace Natural.NUnit.Framework
 		{
 			get
 			{
-				AddAssertion(() => Assert.NotNull(Reference));
+				AddAssertion(() => Assert.Null(Reference));
 				return new ConjunctionAssertion(this);
 			}
 		}

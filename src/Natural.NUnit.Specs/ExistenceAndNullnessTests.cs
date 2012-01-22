@@ -12,28 +12,31 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void null_is_definitely_null()
 		{
-			object nil = null;
-			(nil.Should().NotBeNull).Evaluate();
+			object @null = null;
+			(@null.Should().BeNull).Evaluate();
+			Assert.Throws<AssertionException>((42.Should().BeNull).Evaluate);
 		}
 
 		[Test]
 		public void a_nonnull_object_is_definitely_not_null()
 		{
-			(5.Should().BeNull).Evaluate();
+			object @null = null;
+			(5.Should().NotBeNull).Evaluate();
+			Assert.Throws<AssertionException>((@null.Should().NotBeNull).Evaluate);
 		}
 
 		[Test]
-		public void Be_method_evaluates_only_when_Evaluate_is_invoked()
+		public void BeNull_property_evaluates_only_when_Evaluate_is_invoked()
 		{
-			object nil = null;
-			var eval = nil.Should().BeNull;
+			var eval = 42.Should().BeNull;
 			Assert.Throws<AssertionException>(eval.Evaluate);
 		}
 
 		[Test]
-		public void NotBe_method_evaluates_only_when_Evaluate_is_invoked()
+		public void NotBeNull_property_evaluates_only_when_Evaluate_is_invoked()
 		{
-			var eval = 42.Should().NotBeNull;
+			object @null = null;
+			var eval = @null.Should().NotBeNull;
 			Assert.Throws<AssertionException>(eval.Evaluate);
 		}
 	}
