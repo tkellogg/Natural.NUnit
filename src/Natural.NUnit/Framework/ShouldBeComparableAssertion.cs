@@ -10,28 +10,28 @@ namespace Natural.NUnit.Framework
 		{
 		}
 
-		public static ConjunctionAssertion operator <(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator <(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.Less(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
-		public static ConjunctionAssertion operator >(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator >(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.Greater(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
-		public static ConjunctionAssertion operator <=(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator <=(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.LessOrEqual(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
-		public static ConjunctionAssertion operator >=(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator >=(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.GreaterOrEqual(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
 		#region opposite direction

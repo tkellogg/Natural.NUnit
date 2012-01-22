@@ -175,10 +175,37 @@ namespace Natural.NUnit.Specs
 				(1 < 3.ShouldBe() < 1 || 5 > 3.ShouldBe() > 1).Evaluate();
 			}
 
-			[Test]
-			public void It_can_pass_a_range_comparison_when_the_first_element_is_the_ShouldBe()
+			public class WhenTheFirstElementIsThe_ShouldBe
 			{
-				//(1.ShouldBe() < 3 < 5).Evaluate();
+				[Test]
+				public void It_can_do_a_range_comparison_using_LessThan()
+				{
+					(1.ShouldBe() < 3 < 5).Evaluate();
+					Assert.Throws<AssertionException>((5.ShouldBe() < 3 < 5).Evaluate);
+				}
+
+				[Test]
+				public void It_can_do_a_range_comparison_using_GreaterThan()
+				{
+					(5.ShouldBe() > 3 > 1).Evaluate();
+					Assert.Throws<AssertionException>((1.ShouldBe() > 3 > 1).Evaluate);
+				}
+
+				[Test]
+				public void It_can_do_a_range_comparison_using_LessThanOrEqual()
+				{
+					(1.ShouldBe() <= 3 < 5).Evaluate();
+					(3.ShouldBe() <= 3 < 5).Evaluate();
+					Assert.Throws<AssertionException>((5.ShouldBe() <= 3 < 5).Evaluate);
+				}
+
+				[Test]
+				public void It_can_do_a_range_comparison_using_GreaterThanOrEqual()
+				{
+					(5.ShouldBe() >= 3 > 1).Evaluate();
+					(3.ShouldBe() >= 3 > 1).Evaluate();
+					Assert.Throws<AssertionException>((1.ShouldBe() >= 3 > 1).Evaluate);
+				}
 			}
 		}
 	}
