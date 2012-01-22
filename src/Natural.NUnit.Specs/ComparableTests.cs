@@ -102,15 +102,27 @@ namespace Natural.NUnit.Specs
 		public class RangeComparisonBehavior
 		{
 			[Test]
-			public void It_can_assert_itself_within_a_range()
+			public void It_can_assert_itself_within_a_range_of_LessThan_operators()
 			{
 				(1 < 3.ShouldBe() < 5).Evaluate();
 			}
 
 			[Test]
-			public void It_can_fail_an_assertion_on_the_2nd_operator()
+			public void It_can_fail_an_assertion_on_the_2nd_LessThan_operator()
 			{
 				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 1).Evaluate);
+			}
+
+			[Test]
+			public void It_can_assert_itself_within_a_range_of_GreaterThan_operators()
+			{
+				(5 > 3.ShouldBe() > 1).Evaluate();
+			}
+
+			[Test]
+			public void It_can_fail_an_assertion_on_the_2nd_GreaterThan_operator()
+			{
+				Assert.Throws<AssertionException>((5 > 3.ShouldBe() > 5).Evaluate);
 			}
 
 			[Test]

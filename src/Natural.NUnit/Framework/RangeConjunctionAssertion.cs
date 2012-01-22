@@ -41,7 +41,13 @@ namespace Natural.NUnit.Framework
 
 		public static ConjunctionAssertion operator >(RangeConjunctionAssertion<T> actual, T expected)
 		{
-			return null;
+			if (!(actual.leftHandValue is IComparable) || !(expected is IComparable))
+				throw new InvalidOperationException("Expected an IComparable but got " + typeof(T).FullName);
+
+			actual.AddAssertion(() =>
+				Assert.Greater((IComparable)actual.leftHandValue, (IComparable)expected));
+
+			return new ConjunctionAssertion(actual);
 		}
 	}
 }
