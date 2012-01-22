@@ -66,7 +66,11 @@ namespace Natural.NUnit.Framework
 
 		private bool IsTruish
 		{
-			get { return !GetErrors().Any(); }
+			get 
+			{ 
+				var result = !GetErrors().Any();
+				return this.Negated ? !result : result;
+			}
 		}
 
 		public static bool operator true(ConjunctionAssertion self)

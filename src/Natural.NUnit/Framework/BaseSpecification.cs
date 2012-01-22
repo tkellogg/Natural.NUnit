@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using NUnit.Framework;
 
 namespace Natural.NUnit.Framework
 {
@@ -8,6 +9,17 @@ namespace Natural.NUnit.Framework
 	{
 		private readonly List<BaseSpecification> specifications;
 		private readonly List<Exception> errors;
+		private bool negated = false;
+		protected bool Negated
+		{
+			get { return negated; }
+			set
+			{
+				negated = value;
+				foreach (var spec in specifications)
+					spec.Negated = value;
+			}
+		}
 
 		protected BaseSpecification()
 		{
@@ -63,7 +75,13 @@ namespace Natural.NUnit.Framework
 		public virtual void Evaluate()
 		{
 			var first = GetErrors().FirstOrDefault();
-			if (first != null)
+
+			if (Negated)
+			{
+				if (first == null)
+					Assert.Fail("Expected expression to be false");
+			}
+			else if (first != null)
 				throw first;
 		}
 
@@ -71,6 +89,12 @@ namespace Natural.NUnit.Framework
 		{
 			self.Evaluate();
 			return true;
+		}
+
+		public static BaseSpecification operator !(BaseSpecification self)
+		{
+			self.Negated = true;
+			return self;
 		}
 
 	}

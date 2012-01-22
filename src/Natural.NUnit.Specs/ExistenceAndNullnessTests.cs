@@ -25,6 +25,17 @@ namespace Natural.NUnit.Specs
 			Assert.Throws<AssertionException>((@null.Should().NotBeNull).Evaluate);
 		}
 
+		/// <summary>
+		/// Outside-in spec. There's other, more terse, tests that test the same thing
+		/// </summary>
+		[Test]
+		public void When_you_want_NotNull_just_use_the_negation_uranary_operator()
+		{
+			object @null = null;
+			Assert.That(!5.Should().BeNull);
+			Assert.Throws<AssertionException>(() => Assert.That(!@null.Should().BeNull));
+		}
+
 		[Test]
 		public void BeNull_property_evaluates_only_when_Evaluate_is_invoked()
 		{
