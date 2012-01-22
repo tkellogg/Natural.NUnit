@@ -10,28 +10,54 @@ namespace Natural.NUnit.Framework
 		{
 		}
 
-		public static ConjunctionAssertion operator <(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator <(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.Less(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
-		public static ConjunctionAssertion operator >(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator >(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.Greater(self.Reference, other));
-			return new ConjunctionAssertion(self);
+			return new RangeConjunctionAssertion<T>(self, other);
 		}
 
-		public static ConjunctionAssertion operator <=(ShouldBeComparableAssertion<T> self, T other)
+		public static RangeConjunctionAssertion<T> operator <=(ShouldBeComparableAssertion<T> self, T other)
 		{
 			self.AddAssertion(() => Assert.LessOrEqual(self.Reference, other));
+			return new RangeConjunctionAssertion<T>(self, other);
+		}
+
+		public static RangeConjunctionAssertion<T> operator >=(ShouldBeComparableAssertion<T> self, T other)
+		{
+			self.AddAssertion(() => Assert.GreaterOrEqual(self.Reference, other));
+			return new RangeConjunctionAssertion<T>(self, other);
+		}
+
+		#region opposite direction
+		public static RangeConjunctionAssertion<T> operator <(T other, ShouldBeComparableAssertion<T> self)
+		{
+			self.AddAssertion(() => Assert.Less(other, self.Reference));
+			return new RangeConjunctionAssertion<T>(self, self.Reference);
+		}
+
+		public static RangeConjunctionAssertion<T> operator >(T other, ShouldBeComparableAssertion<T> self)
+		{
+			self.AddAssertion(() => Assert.Greater(other, self.Reference));
+			return new RangeConjunctionAssertion<T>(self, self.Reference);
+		}
+
+		public static ConjunctionAssertion operator <=(T other, ShouldBeComparableAssertion<T> self)
+		{
+			self.AddAssertion(() => Assert.LessOrEqual(other, self.Reference));
 			return new ConjunctionAssertion(self);
 		}
 
-		public static ConjunctionAssertion operator >=(ShouldBeComparableAssertion<T> self, T other)
+		public static ConjunctionAssertion operator >=(T other, ShouldBeComparableAssertion<T> self)
 		{
-			self.AddAssertion(() => Assert.GreaterOrEqual(self.Reference, other));
+			self.AddAssertion(() => Assert.GreaterOrEqual(other, self.Reference));
 			return new ConjunctionAssertion(self);
 		}
+		#endregion
 	}
 }
