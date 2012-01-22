@@ -18,7 +18,7 @@ namespace Natural.NUnit.Framework
 
 		public static ConjunctionAssertion operator <(RangeConjunctionAssertion<T> actual, T expected)
 		{
-			return null;
+			return new ConjunctionAssertion(actual.self);
 		}
 
 		public static ConjunctionAssertion operator >(RangeConjunctionAssertion<T> actual, T expected)

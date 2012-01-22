@@ -37,25 +37,25 @@ namespace Natural.NUnit.Framework
 		#region opposite direction
 		public static RangeConjunctionAssertion<T> operator <(T other, ShouldBeComparableAssertion<T> self)
 		{
-			self.AddAssertion(() => Assert.Less(self.Reference, other));
+			self.AddAssertion(() => Assert.Less(other, self.Reference));
 			return new RangeConjunctionAssertion<T>(self);
 		}
 
 		public static RangeConjunctionAssertion<T> operator >(T other, ShouldBeComparableAssertion<T> self)
 		{
-			self.AddAssertion(() => Assert.Greater(self.Reference, other));
+			self.AddAssertion(() => Assert.Greater(other, self.Reference));
 			return new RangeConjunctionAssertion<T>(self);
 		}
 
 		public static ConjunctionAssertion operator <=(T other, ShouldBeComparableAssertion<T> self)
 		{
-			self.AddAssertion(() => Assert.LessOrEqual(self.Reference, other));
+			self.AddAssertion(() => Assert.LessOrEqual(other, self.Reference));
 			return new ConjunctionAssertion(self);
 		}
 
 		public static ConjunctionAssertion operator >=(T other, ShouldBeComparableAssertion<T> self)
 		{
-			self.AddAssertion(() => Assert.GreaterOrEqual(self.Reference, other));
+			self.AddAssertion(() => Assert.GreaterOrEqual(other, self.Reference));
 			return new ConjunctionAssertion(self);
 		}
 		#endregion

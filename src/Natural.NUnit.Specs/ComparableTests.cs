@@ -6,7 +6,6 @@ using NUnit.Framework;
 
 namespace Natural.NUnit.Specs
 {
-	[TestFixture]
 	class ComparableTests
 	{
 		public class DefaultComparisonBehavior
@@ -61,6 +60,42 @@ namespace Natural.NUnit.Specs
 			{
 				var assertion = 6.ShouldBe() < 5;
 				Assert.Throws<AssertionException>(assertion.Evaluate);
+			}
+		}
+
+		/// <summary>
+		/// This is a prerequisite for good range comparison support
+		/// </summary>
+		public class BackwardsComparisonBehavior
+		{
+			[Test]
+			public void LessThan_works_as_expected()
+			{
+				(1 < 3.ShouldBe()).Evaluate();
+				Assert.Throws<AssertionException>((5 < 3.ShouldBe()).Evaluate);
+			}
+
+			[Test]
+			public void GreaterThan_works_as_expected()
+			{
+				(5 > 3.ShouldBe()).Evaluate();
+				Assert.Throws<AssertionException>((1 > 3.ShouldBe()).Evaluate);
+			}
+
+			[Test]
+			public void LessThanOrEqual_works_as_expected()
+			{
+				(3 <= 3.ShouldBe()).Evaluate();
+				(1 <= 3.ShouldBe()).Evaluate();
+				Assert.Throws<AssertionException>((5 <= 3.ShouldBe()).Evaluate);
+			}
+
+			[Test]
+			public void GreaterThanOrEqual_works_as_expected()
+			{
+				(3 >= 3.ShouldBe()).Evaluate();
+				(5 >= 3.ShouldBe()).Evaluate();
+				Assert.Throws<AssertionException>((1 >= 3.ShouldBe()).Evaluate);
 			}
 		}
 

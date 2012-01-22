@@ -28,7 +28,6 @@ namespace Natural.NUnit.Framework
 		protected void AddSpec(BaseSpecification spec)
 		{
 			specifications.Add(spec);
-			errors.Add(null);
 		}
 
 		protected Exception AddAssertion(Action assertion)
