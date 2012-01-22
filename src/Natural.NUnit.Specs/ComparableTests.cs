@@ -152,6 +152,30 @@ namespace Natural.NUnit.Specs
 			}
 
 			[Test]
+			public void It_can_assert_a_range_and_then_conjunct_with_another_expression()
+			{
+				(1 < 3.ShouldBe() < 5 && 42.Should() == 42).Evaluate();
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 5 && 42.Should() != 42).Evaluate);
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 1 && 42.Should() == 42).Evaluate);
+
+				(1 < 3.ShouldBe() < 5 || 42.Should() == 42).Evaluate();
+				(1 < 3.ShouldBe() < 5 || 42.Should() != 42).Evaluate();
+				(1 < 3.ShouldBe() < 1 || 42.Should() == 42).Evaluate();
+			}
+
+			[Test]
+			public void It_can_assert_a_range_and_then_conjunct_with_another_range()
+			{
+				(1 < 3.ShouldBe() < 5 && 5 > 3.ShouldBe() > 1).Evaluate();
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 5 && 5 > 3.ShouldBe() > 5).Evaluate);
+				Assert.Throws<AssertionException>((1 < 3.ShouldBe() < 1 && 5 > 3.ShouldBe() > 1).Evaluate);
+
+				(1 < 3.ShouldBe() < 5 || 5 > 3.ShouldBe() > 1).Evaluate();
+				(1 < 3.ShouldBe() < 5 || 5 > 3.ShouldBe() > 5).Evaluate();
+				(1 < 3.ShouldBe() < 1 || 5 > 3.ShouldBe() > 1).Evaluate();
+			}
+
+			[Test]
 			public void It_can_pass_a_range_comparison_when_the_first_element_is_the_ShouldBe()
 			{
 				//(1.ShouldBe() < 3 < 5).Evaluate();
