@@ -42,10 +42,13 @@ namespace Natural.NUnit.Framework
 			return new ConjunctionAssertion(this);
 		}
 
-		public ConjunctionAssertion Be()
+		public ConjunctionAssertion BeNull
 		{
-			AddAssertion(() => Assert.NotNull(Reference));
-			return new ConjunctionAssertion(this);
+			get
+			{
+				AddAssertion(() => Assert.NotNull(Reference));
+				return new ConjunctionAssertion(this);
+			}
 		}
 
 		#region Overrides from object

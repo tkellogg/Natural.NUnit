@@ -19,14 +19,14 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void a_nonnull_object_is_definitely_not_null()
 		{
-			(5.Should().Be()).Evaluate();
+			(5.Should().BeNull).Evaluate();
 		}
 
 		[Test]
 		public void Be_method_evaluates_only_when_Evaluate_is_invoked()
 		{
 			object nil = null;
-			var eval = nil.Should().Be();
+			var eval = nil.Should().BeNull;
 			Assert.Throws<AssertionException>(eval.Evaluate);
 		}
 
