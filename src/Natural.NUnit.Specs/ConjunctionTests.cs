@@ -31,28 +31,28 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void it_passes_when_given_true_AND_true()
 		{
-			var expression = 5.ShouldBe() > 4 && 4.ShouldBe() < 5;
+			var expression = 5.Should() > 4 && 4.Should() < 5;
 			expression.Evaluate();
 		}
 
 		[Test]
 		public void it_fails_when_given_false_AND_true()
 		{
-			var expression = 3.ShouldBe() > 4 && 4.ShouldBe() < 5;
+			var expression = 3.Should() > 4 && 4.Should() < 5;
 			Assert.Throws<AssertionException>(expression.Evaluate);
 		}
 
 		[Test]
 		public void it_fails_when_given_true_AND_false()
 		{
-			var expression = 5.ShouldBe() > 4 && 6.ShouldBe() < 5;
+			var expression = 5.Should() > 4 && 6.Should() < 5;
 			Assert.Throws<AssertionException>(expression.Evaluate);
 		}
 
 		[Test]
 		public void it_fails_when_given_false_AND_false()
 		{
-			var expression = 3.ShouldBe() > 4 && 6.ShouldBe() < 5;
+			var expression = 3.Should() > 4 && 6.Should() < 5;
 			Assert.Throws<AssertionException>(expression.Evaluate);
 		}
 
@@ -74,28 +74,28 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void it_passes_when_given_true_or_true()
 		{
-			var expression = 4.ShouldBe() > 3 || 5.ShouldBe() < 6;
+			var expression = 4.Should() > 3 || 5.Should() < 6;
 			expression.Evaluate();
 		}
 
 		[Test]
 		public void it_passes_when_given_false_or_true()
 		{
-			var expression = 2.ShouldBe() > 3 || 5.ShouldBe() < 6;
+			var expression = 2.Should() > 3 || 5.Should() < 6;
 			expression.Evaluate();
 		}
 
 		[Test]
 		public void it_passes_when_given_true_or_false()
 		{
-			var expression = 4.ShouldBe() > 3 || 7.ShouldBe() < 6;
+			var expression = 4.Should() > 3 || 7.Should() < 6;
 			expression.Evaluate();
 		}
 
 		[Test]
 		public void it_fails_when_given_false_or_false()
 		{
-			var expression = 2.ShouldBe() > 3 || 7.ShouldBe() < 6;
+			var expression = 2.Should() > 3 || 7.Should() < 6;
 			Assert.Throws<AssertionException>(expression.Evaluate);
 		}
 
@@ -117,14 +117,14 @@ namespace Natural.NUnit.Specs
 		[Test]
 		public void it_passes_when_using_parentheses()
 		{
-			var expression = (2.ShouldBe() > 3 || 7.ShouldBe() > 6) && 1.Should() == 1;
+			var expression = (2.Should() > 3 || 7.Should() > 6) && 1.Should() == 1;
 			expression.Evaluate();
 		}
 
 		[Test]
 		public void it_passes_when_not_using_parentheses()
 		{
-			var expression = 2.ShouldBe() > 3 || 7.ShouldBe() > 6 && 1.Should() == 1;
+			var expression = 2.Should() > 3 || 7.Should() > 6 && 1.Should() == 1;
 			expression.Evaluate();
 		}
 
