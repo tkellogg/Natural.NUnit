@@ -89,5 +89,15 @@ namespace Natural.NUnit.Framework
 				Assert.Fail("one side of the && operator failed");
 			base.Evaluate();
 		}
+
+		protected override bool Negated
+		{
+			get { return base.Negated; }
+			set
+			{
+				if (negated == value) return;
+				negated = value;
+			}
+		}
 	}
 }

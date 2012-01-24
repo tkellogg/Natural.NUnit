@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSpecificationTests.cs" />
-    <Compile Include="ChainedStatementsTests.cs" />
+    <Compile Include="ConjunctionTests.cs" />
     <Compile Include="CollectionAssertionTests.cs" />
     <Compile Include="ComparableTests.cs" />
     <Compile Include="EqualityAndInEqualityTests.cs" />

@@ -9,15 +9,17 @@ namespace Natural.NUnit.Framework
 	{
 		private readonly List<BaseSpecification> specifications;
 		private readonly List<Exception> errors;
-		private bool negated = false;
-		protected bool Negated
+		protected bool negated = false;
+
+		protected virtual bool Negated
 		{
 			get { return negated; }
 			set
 			{
+				if (negated == value) return;
 				negated = value;
 				foreach (var spec in specifications)
-					spec.Negated = value;
+					spec.Negated = !spec.Negated;
 			}
 		}
 
