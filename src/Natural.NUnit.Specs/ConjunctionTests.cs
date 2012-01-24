@@ -128,6 +128,9 @@ namespace Natural.NUnit.Specs
 			expression.Evaluate();
 		}
 
+		/// <summary>
+		/// TRUTH TABLES!!!!
+		/// </summary>
 		public class NegationBehavior
 		{
 			[TestCase(true, true, ExpectedException=typeof(AssertionException))]

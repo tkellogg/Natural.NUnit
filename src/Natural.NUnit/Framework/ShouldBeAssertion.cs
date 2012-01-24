@@ -54,6 +54,14 @@ namespace Natural.NUnit.Framework
 			}
 		}
 
+		public ShouldBeComparableAssertion<T> Be
+		{
+			get
+			{
+				return new ShouldBeComparableAssertion<T>(Reference);
+			}
+		}
+
 		#region Overrides from object
 		public override bool Equals(object obj)
 		{
