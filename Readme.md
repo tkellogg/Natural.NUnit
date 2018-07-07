@@ -6,7 +6,7 @@ of core C#.
 Theory
 =====================
 
-Frameworks like [Rspec](http://rspec.info/) and [Jasmine](http://pivotal.github.com/jasmine/) 
+Frameworks like [Rspec](http://rspec.info/) and [Jasmine](https://jasmine.github.io/) 
 are perfectly suited to the BDD design pattern, mostly because the 
 languages they're implemented in (Ruby & JavaScript) have certain features
 that make them easy to implement BDD. C# has some features in common
